@@ -4,16 +4,15 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-function formatNameUser(user) {
-	return `${user.firstname} ${user.lastname}`;
+function tick() {
+	const element = (
+		<div>
+			<h1>Hello, world</h1>
+			<h2>It is {new Date().toLocaleTimeString()}.</h2>
+		</div>
+	);
+	ReactDOM.render(element, document.getElementById('root'));
+	registerServiceWorker();
 }
 
-const user = {
-	firstname: 'Jelly',
-	lastname: 'Beans'
-};
-
-const element = <h1>Hello, {formatNameUser(user)}</h1>;
-
-ReactDOM.render(element, document.getElementById('root'));
-registerServiceWorker();
+setInterval(tick, 1000);
