@@ -8,8 +8,9 @@ class App extends Component {
 			date: new Date(),
 			text: 'I hope you enjoy learning React',
 			author: {
-				name: 'Hello Kitty',
-				avatarUrl: 'https://placekitten.com/g/64/64'
+				name: 'Brian RC Teddy',
+				avatarUrl: 'https://placekitten.com/g/64/64',
+				alt: 'image to be followed'
 			}
 		};
 		return (

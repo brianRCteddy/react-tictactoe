@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 
-// class Welcome extends Component {
-// 	render() {
-// 		return <h1>Hello, {this.props.name}</h1>;
-// 	}
-// }
+const Avatar = (props) => {
+	return <img className="Avatar" src={props.user.avatarUrl} alt={props.user.alt} />;
+};
+
+const UserInfo = (props) => {
+	return (
+		<div className="UserInfo">
+			<Avatar user={props.user} />
+			<div className="UserInfo-name">{props.user.name}</div>
+		</div>
+	);
+};
+
+const formatDate = (date) => {
+	return date.toLocaleDateString();
+};
 
 const Comment = (props) => {
-	const formatDate = (date) => {
-		return date.toLocaleDateString();
-	};
 	return (
 		<div className="Comment">
-			<div className="UserInfo">
-				<img className="Avatar" src={props.author.avatarUrl} alt={props.author.name} />
-				<div className="UserrInfor-name">{props.author.name}</div>
-			</div>
+			<UserInfo user={props.author} />
 			<div className="Comment-text">{props.text}</div>
 			<div className="Comment-date">{formatDate(props.date)}</div>
 		</div>
